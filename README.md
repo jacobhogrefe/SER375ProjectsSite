@@ -7,11 +7,11 @@ _Not available yet_
 
 ## How to add your own project
 This process is a little complicated so read these instructions carefully.
-###Fork the repo
+### Fork the repo
 1. On the top right side of the GitHub repo page, click the fork option
 2. Doing so will take you to a new page, click ```Create fork```
 
-###Getting the files to your computer
+### Getting the files to your computer
 1. Go to your newly set up repo on GitHub
 2. Click the green drop down button in the top right corner that says ```Code```
 3. Copy the link
@@ -20,8 +20,8 @@ This process is a little complicated so read these instructions carefully.
 6. You can now open your forked repository on your IDE
 7. Run this command in the terminal ```git remote add upstream https://github.com/ellidelli/SER375ProjectsSite.git``
 
-###How to add your project
-#####Creating your project file
+### How to add your project
+##### Creating your project file
 
 1. I suggest having a document with the following information: project title, your name, a project description, the story of how your project came about, and the struggles and triumphs you faced in the process. Please also have your images and your demo video ready.
 2. Navigate to this folder ```/src/projects``` in the source code
@@ -33,26 +33,24 @@ This process is a little complicated so read these instructions carefully.
 6. Scoll to the ```export default``` section. Notice the name variable. Change it to your projects title. **With no spaces.**
 7. Scroll to the ```data``` section. Use your prepared document to put in your project data to replace the sample data.
 
-#####Allowing your project to render on the site
+##### Allowing your project to render on the site
 1. Navigate to the file ```/src/views/Project.vue```
-2. Within the template, add your own project above the invalid project option. Use this code: ```      <div v-if="projectTitle === 'sampleproject'">
-        <SampleProject/>
-      </div>``` Replace sampleproject with your project title. The first one should be all lowercase and the second should have uppercase on each word.
-3. Scroll to the ```scripts``` section. Import your project the same way the sample was. **Do not get rid of the sample, just add yours below.**
+2. Within the template, add your own project above the invalid project option. Use this code: ```<div v-if="projectTitle === 'sampleproject'"><SampleProject/></div>``` Replace sampleproject with your project title. The first one should be all lowercase and the second should have uppercase on each word.
+3. Scroll to the ```scripts``` section. Import your project the same way the sample was. **Do not get rid of the sample; just add yours below.**
 4. Within ```export default```, you will see components. Add your project title with the same casing as your import. Please add a "," after your addition. 
 
-#####Adding search functionality for your project
+##### Adding search functionality for your project
 *coming soon*
 
-#####Optional steps if you want one of your images to appear on the homepage background
+##### Optional steps if you want one of your images to appear on the homepage background
 1. Navigate to the folder ```/src/assets/backgrounds``` folder
-2. Drop your image (renamed please) in the folder
+2. Drop your image (renamed, please) into the folder
 3. Navigate to the file ```src/views/HomeView.vue``` and add your image name to the line 24 array
-4. Now your image can randomly pop up as the homescreen background
+4. Now your image can randomly pop up as the home screen background
 
-***Please before continuing, make sure the website still works and your project page looks the way you want***
+***Please, before continuing, make sure the website still works and your project page looks the way you want***
 
-#####Adding your project to the offical repo
+##### Adding your project to the official repo
 1. Run ```git pull upstream master```
 2. Go to the original repo’s GitHub page
 3. Create a pull request like normal
