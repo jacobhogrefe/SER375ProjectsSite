@@ -17,6 +17,7 @@
   <script>
   import twoColumnTemplate from '../components/templates/twoColumnTemplate.vue'
   import sampleImage from '../projects/project_images/ProjectSampleImage.jpeg';
+  // import sampleVideo from '../projects/project_videos/<VIDEO TITLE>'
   
   export default {
     name: 'SampleProject',
@@ -34,7 +35,7 @@
         struggles: "Write your project's struggles here. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque adipisci nesciunt distinctio consectetur quisquam consequatur, corrupti reiciendis ex aut quibusdam minima quidem earum quod architecto deserunt a, commodi debitis! Ducimus.",
         triumphs: "Write your project's triumphs here. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque adipisci nesciunt distinctio consectetur quisquam consequatur, corrupti reiciendis ex aut quibusdam minima quidem earum quod architecto deserunt a, commodi debitis! Ducimus.",
         pictures: [sampleImage],
-        video: "video url"
+        video: "sampleVideo" //get rid of the quotes when putting in your video variable
       }
     }
   }
