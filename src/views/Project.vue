@@ -4,7 +4,7 @@
         <SampleProject/>
       </div>
       <div v-else>
-        <p>Invalid project!</p>
+        <h1 style="padding: 45vh;">Invalid project!</h1>
       </div>
     </div>
   </template>

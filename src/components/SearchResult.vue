@@ -21,7 +21,7 @@ export default {
         };
     },
     created() {
-        this.projectRoute = `/project/${this.title.replace(' ', '-')}-${this.author.replace(' ', '-')}`;
+        this.projectRoute = `/projects/${this.title.replace(' ', '').toLowerCase()}`;
     },
 };
 </script>

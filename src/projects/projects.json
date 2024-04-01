@@ -4,43 +4,13 @@
             "header": {
                 "title": "Trick Or Treat - Stardew Valley Mod",
                 "author": "Ellie Delea"
-            },
-            "projectDesc": null
+            }
         },
         {
             "header": {
-                "title": "Minecraft Mod",
-                "author": "Jacob Hogrefe"
-            },
-            "projectDesc": null
-        },
-        {
-            "header": {
-                "title": "My Little Library",
-                "author": "Lauren Sloane"
-            },
-            "projectDesc": null
-        },
-        {
-            "header": {
-                "title": "kqjwe Mod",
-                "author": "Ellie Delea"
-            },
-            "projectDesc": null
-        },
-        {
-            "header": {
-                "title": "adfksjnf Mod",
-                "author": "Ellie Delea"
-            },
-            "projectDesc": null
-        },
-        {
-            "header": {
-                "title": "popp Mod",
-                "author": "Ellie"
-            },
-            "projectDesc": null
+                "title": "Sample Project",
+                "author": "John Smith"
+            }
         }
     ]
 }

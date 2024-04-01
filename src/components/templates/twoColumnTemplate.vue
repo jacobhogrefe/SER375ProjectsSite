@@ -2,6 +2,7 @@
     <div class="data">
         <h1>{{ projectTitle }}</h1>
         <h3>{{ author }}</h3>
+        <tags></tags>
         <div class="container">
             <div class="left">
                 <h1>What is this project?</h1>
@@ -24,19 +25,24 @@
 
 <script>
 // import projectData from '../../projects/projects.json'
+import tags from '../tags.vue'
 export default {
     name: 'twoColumnTemplate',
     props: [
         'backgroundColor',
         'projectTitle',
         'author',
+        'tags',
         'description',
         'story',
         'struggles',
         'triumphs',
         'pictures',
         'video',
-    ]
+    ],
+    components: {
+        tags
+    }
 }
 </script>
 
