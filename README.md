@@ -18,7 +18,7 @@ This process is a little complicated so read these instructions carefully.
 4. Open your terminal and cd into a path you can easily find your files (ex. desktop)
 5. Once in your prefered directory, use the command ```git clone (your copied link)```
 6. You can now open your forked repository on your IDE
-7. Run this command in the terminal ```git remote add upstream https://github.com/ellidelli/SER375ProjectsSite.git``
+7. Run this command in the terminal ```git remote add upstream https://github.com/ellidelli/SER375ProjectsSite.git```
 
 ### How to add your project
 ##### Creating your project file
