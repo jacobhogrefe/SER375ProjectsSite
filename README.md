@@ -27,15 +27,19 @@ This process is a little complicated so read these instructions carefully.
 2. Navigate to this folder ```/src/projects``` in the source code
 3. Place your images in the folder ```project_images```
 4. Place your demo video in the folder ```project_videos```
-3. Create a new file called ```<YourProjectName>.vue``` within the main projects folder
-4. In the same folder, you will see a file called ```SampleProject.vue```, copy this code and paste it into your new file
-5. Scroll to the ```scripts``` tag. Notice the import statements. Do not touch the the first import that says ```twoColumnTemplate```. Change the image import and the video import to your images and video. To add more than one image, copy and paste the image import with a new path and change the variable name.
-6. Scoll to the ```export default``` section. Notice the name variable. Change it to your projects title. **With no spaces.**
-7. Scroll to the ```data``` section. Use your prepared document to put in your project data to replace the sample data.
+5. Create a new file called ```<YourProjectName>.vue``` within the main projects folder
+6. In the same folder, you will see a file called ```SampleProject.vue```, copy this code and paste it into your new file
+7. Scroll to the ```scripts``` tag. Notice the import statements. Do not touch the the first import that says ```twoColumnTemplate```. Change the image import and the video import to your images and video. To add more than one image, copy and paste the image import with a new path and change the variable name.
+![create7](/ReadMeImages/create7.png)
+8. Scoll to the ```export default``` section. Notice the name variable. Change it to your projects title. **With no spaces.**
+![create8](/ReadMeImages/create8.png)
+9. Scroll to the ```data``` section. Use your prepared document to put in your project data to replace the sample data.
+![create9](/ReadMeImages/create9.png)
 
 ##### Allowing your project to render on the site
 1. Navigate to the file ```/src/views/Project.vue```
 2. Within the template, add your own project above the invalid project option. Use this code: ```<div v-if="projectTitle === 'sampleproject'"><SampleProject/></div>``` Replace sampleproject with your project title. The first one should be all lowercase and the second should have uppercase on each word.
+![render2](/ReadMeImages/render2.png)
 3. Scroll to the ```scripts``` section. Import your project the same way the sample was. **Do not get rid of the sample; just add yours below.**
 4. Within ```export default```, you will see components. Add your project title with the same casing as your import. Please add a "," after your addition. 
 
