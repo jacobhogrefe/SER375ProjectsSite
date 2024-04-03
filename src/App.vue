@@ -3,6 +3,7 @@
     <nav>
       <router-link to="/">Home</router-link>
       <router-link to="/discover">Discover</router-link>
+      <router-link to="/tags">Project Tags</router-link>
     </nav>
     <router-view />
   </div>

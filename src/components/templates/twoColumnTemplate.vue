@@ -2,7 +2,6 @@
     <div class="data">
         <h1>{{ projectTitle }}</h1>
         <h3>{{ author }}</h3>
-        <tags></tags>
         <div class="container">
             <div class="left">
                 <h1>What is this project?</h1>

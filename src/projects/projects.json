@@ -3,13 +3,15 @@
         {
             "header": {
                 "title": "Trick Or Treat - Stardew Valley Mod",
-                "author": "Ellie Delea"
+                "author": "Ellie Delea",
+                "tags": ["Stardew", "SMAPI", "Modding"]
             }
         },
         {
             "header": {
                 "title": "Sample Project",
-                "author": "John Smith"
+                "author": "John Smith",
+                "tags": ["Coding", "Hello", "Open Source"]
             }
         }
     ]
