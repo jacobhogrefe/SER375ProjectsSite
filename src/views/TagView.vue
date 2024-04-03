@@ -15,7 +15,7 @@ export default {
 
 <style scoped>
 .bg {
-    padding: 15vh 10vw 25vh 10vw;
+    padding: 0vh 10vw 25vh 10vw;
     /* top right bottom left */
     background-color: rgb(32, 33, 38);
     min-height: 100vh;

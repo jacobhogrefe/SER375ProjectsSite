@@ -16,7 +16,6 @@
   
 <script>
 import SearchResult from "@/components/SearchResult.vue";
-// import { useRouter } from 'vue-router';
 import projectData from "../projects/projects.json"
 
 export default {

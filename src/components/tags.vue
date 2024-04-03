@@ -1,18 +1,30 @@
 <template>
     <div class="tag-container">
-        <h4 v-for="(count, tag) in tagCounts" :key="tag" :style="{ backgroundColor: getRandomColor() }">
+        <h4 v-for="(count, tag) in tagCounts" :key="tag" :style="{ backgroundColor: getRandomColor() }"
+            @click="openResults(tag)" class="tagButton">
             {{ tag }} ({{ count }}) </h4>
+    </div>
+    <div class="results-container" v-if="searchResults && searchResults.length > 0">
+        <h1>Results</h1>
+        <search-result v-for="searchResult in searchResults" :key="searchResult.display" :title="searchResult.Title"
+            :author="searchResult.Author" :display="searchResult.display" />
     </div>
 </template>
 
 <script>
 import projectData from '../projects/projects.json'
+import SearchResult from './SearchResult.vue';
 export default {
+    components: {
+        SearchResult
+    },
     data() {
         return {
             tags: [],
-            tagCounts: {}, // Object to store tag counts
-            colors: ["#AEB1D9", "#A8D2B7", "#BE9D7F", "#C68868", "#924742"]
+            tagCounts: {},
+            colors: ["#AEB1D9", "#A8D2B7", "#BE9D7F", "#C68868", "#924742"],
+            searchResults: null,
+            searchTerm: '',
         }
     },
     mounted() {
@@ -36,13 +48,37 @@ export default {
             }
         },
         countTagOccurrences() {
-            // Reset tagCounts
             this.tagCounts = {};
-            // Count occurrences of each tag
             this.tags.forEach(tag => {
                 this.tagCounts[tag] = (this.tagCounts[tag] || 0) + 1;
             });
-        }
+        },
+        openResults(tag) {
+            console.log("clicked", tag);
+            this.searchTerm = tag;
+            if (!this.searchTerm) {
+                return;
+            }
+            const query = this.searchTerm.toLowerCase();
+            const matches = [];
+            const cache = new Set();
+            projectData.projects.forEach(project => {
+                const tags = project.header.tags.map(tag => tag.toLowerCase());
+                if (tags.includes(query)) {
+                    const display = `${project.header.title}-${project.header.author}`;
+                    if (!cache.has(display)) {
+                        matches.push({
+                            Title: project.header.title,
+                            Author: project.header.author,
+                            display
+                        });
+                        cache.add(display);
+                    }
+                }
+            });
+            matches.sort((a, b) => (a.display > b.display) ? 1 : -1);
+            this.searchResults = matches;
+        },
     }
 }
 </script>
@@ -68,5 +104,15 @@ h4 {
     flex-direction: row;
     justify-content: center;
     padding-bottom: 5vh;
+    flex-wrap: wrap;
+}
+
+.tagButton {
+    margin: 1vh;
+}
+
+.tagButton:hover {
+    transition: color 0.3s;
+    color: rgb(28 29 33);
 }
 </style>
