@@ -22,7 +22,7 @@ export default {
         return {
             tags: [],
             tagCounts: {},
-            colors: ["#AEB1D9", "#A8D2B7", "#BE9D7F", "#C68868", "#924742"],
+            colors: ["#7473BF", "#6767A3", "#5A5A87", "#4D4E6B", "#46485D", "#434556", "#3F414E"],
             searchResults: null,
             searchTerm: '',
         }
