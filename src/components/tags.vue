@@ -1,6 +1,7 @@
 <template>
     <div class="tag-container">
-        <h4 v-for="(tag, index) in tags" :key="index" :style="{ backgroundColor: getRandomColor() }">{{ tag }}</h4>
+        <h4 v-for="(count, tag) in tagCounts" :key="tag" :style="{ backgroundColor: getRandomColor() }">
+            {{ tag }} ({{ count }}) </h4>
     </div>
 </template>
 
@@ -10,12 +11,12 @@ export default {
     data() {
         return {
             tags: [],
+            tagCounts: {}, // Object to store tag counts
             colors: ["#AEB1D9", "#A8D2B7", "#BE9D7F", "#C68868", "#924742"]
         }
     },
     mounted() {
         this.getAllTags();
-        console.log("done")
     },
     methods: {
         getRandomColor() {
@@ -26,13 +27,21 @@ export default {
                 const tags = new Set();
                 projectData.projects.forEach(project => {
                     project.header.tags.forEach(tag => {
-                        console.log(tag)
                         this.tags.push(tag);
                     })
+                    this.countTagOccurrences();
                 });
             } catch (error) {
                 console.error('Error loading projects:', error);
             }
+        },
+        countTagOccurrences() {
+            // Reset tagCounts
+            this.tagCounts = {};
+            // Count occurrences of each tag
+            this.tags.forEach(tag => {
+                this.tagCounts[tag] = (this.tagCounts[tag] || 0) + 1;
+            });
         }
     }
 }
