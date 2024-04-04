@@ -1,3 +1,5 @@
+import { markRaw } from 'vue'
+
 // returns a list of all file names that end with .vue inside of the projects folder
 // e.g. if there were files in the projects folder named "SampleProject1.vue" and "SampleProject2.vue", this function would return ['SampleProject1.vue', 'SampleProject2.vue']
 const getAllProjectFileNames = () => {
@@ -21,15 +23,12 @@ export const getProjects = () => {
 
 // Creates a JSON map consisting of all project page vue components
 // Can be used for dynamically loading all projects as components for another Vue component
-export const getProjectComponents = () => {
+export const getProjectComponent = (projectName) => {
   const vueFileNames = getAllProjectFileNames()
-  const projectComponents = vueFileNames.reduce((acc, curr) => {
-    const name = curr.slice(2, -4)
-    return {
-      ...acc,
-      [name.replaceAll(' ', '').toLowerCase()]: require(`./${name}`).default
-    }
-  }, {})
-  return projectComponents
+  const selectedFileName = vueFileNames.find(vueFileName => vueFileName.slice(2, -4).replaceAll(' ', '').toLowerCase() === projectName)
+  if (!selectedFileName) {
+    return null
+  }
+  return markRaw(require(`${selectedFileName}`).default)
 }
 

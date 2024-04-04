@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-if="isValidProject">
-      <component :is="projectTitle"></component>
+      <component :is="componentMap[projectTitle]"></component>
     </div>
     <div v-else>
       <h1 style="padding: 45vh;">Invalid project!</h1>
@@ -10,26 +10,25 @@
 </template>
 
 <script>
-const { getProjectComponents } = require('../projects/projects-gatherer.js')
-const projectComponents = getProjectComponents()
-  
+
+const { getProjectComponent } = require('../projects/projects-gatherer.js')
+
 export default {
   name: 'Project',
-  components: {
-    ...projectComponents
-  },
   computed: {
     isValidProject() {
-      return !!Object.keys(projectComponents).find(projectComponentKey => projectComponentKey === this.projectTitle)
+      return Object.keys(this.componentMap).length > 0
     }
   },
   mounted() {
-    console.log(this.$route.params.projectTitle)
     this.projectTitle = this.$route.params.projectTitle
+    const projectComponent = getProjectComponent(this.projectTitle)
+    this.componentMap = projectComponent? { [this.projectTitle]: projectComponent } : {}
   },
   data() {
     return {
-      projectTitle: ''
+      projectTitle: '',
+      componentMap: {}
     }
   }
 }
