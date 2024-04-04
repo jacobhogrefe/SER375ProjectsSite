@@ -1,7 +1,7 @@
 <template>
     <div>
-      <div v-if="projectTitle === 'sampleproject'">
-        <SampleProject/>
+      <div v-if="isValidProject">
+        <component :is="projectTitle"></component>
       </div>
       <div v-else>
         <h1 style="padding: 45vh;">Invalid project!</h1>
@@ -10,12 +10,18 @@
   </template>
   
   <script>
-  import SampleProject from '../projects/SampleProject.vue'
-  
+  const { getProjectComponents } = require('../projects/projectsHelper.js')
+  const projectComponents = getProjectComponents()
+    
   export default {
     name: 'Project',
     components: {
-      SampleProject,
+      ...projectComponents
+    },
+    computed: {
+      isValidProject() {
+        return !!Object.keys(projectComponents).find(projectComponentKey => projectComponentKey === this.projectTitle)
+      }
     },
     mounted() {
       console.log(this.$route.params.projectTitle)
