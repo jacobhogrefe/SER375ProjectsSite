@@ -122,4 +122,3 @@ h1 {
     font-size: x-large;
 }
 </style>
-  ../projects/projects-compiler.js../projects/projects-gatherer.js
