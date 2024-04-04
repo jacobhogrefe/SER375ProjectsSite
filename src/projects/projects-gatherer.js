@@ -1,7 +1,7 @@
 // returns a list of all file names that end with .vue inside of the projects folder
-// e.g. if there were files in the projects folder named "SampleProject1.vue" and "SampleProject2.vue", this function would return ['SampleProject1', 'SampleProject2']
+// e.g. if there were files in the projects folder named "SampleProject1.vue" and "SampleProject2.vue", this function would return ['SampleProject1.vue', 'SampleProject2.vue']
 const getAllProjectFileNames = () => {
-  return require.context('@/projects', false, /.vue$/).keys().map(key => key.slice(2, -4))
+  return require.context('@/projects', false, /.vue$/).keys()
 }
 
 // Creates a JSON structure for each project page utilizing their "info" field, which is a custom field containing project metadata
@@ -9,9 +9,10 @@ const getAllProjectFileNames = () => {
 export const getProjects = () => {
   const vueFileNames = getAllProjectFileNames()
   const projects = vueFileNames.map(vueFileName => {
+    const name = vueFileName.slice(2, -4)
     return {
       header: {
-        ...require(`./${vueFileName}`).default.info
+        ...require(`./${name}`).default.info
       }
     }
   })
@@ -23,9 +24,10 @@ export const getProjects = () => {
 export const getProjectComponents = () => {
   const vueFileNames = getAllProjectFileNames()
   const projectComponents = vueFileNames.reduce((acc, curr) => {
+    const name = curr.slice(2, -4)
     return {
       ...acc,
-      [curr.replaceAll(' ', '').toLowerCase()]: require(`./${curr}`).default
+      [name.replaceAll(' ', '').toLowerCase()]: require(`./${name}`).default
     }
   }, {})
   return projectComponents
