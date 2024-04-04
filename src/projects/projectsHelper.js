@@ -1,5 +1,9 @@
+const getAllProjectFileNames = () => {
+  return require.context('@/projects', false, /.vue$/).keys().map(key => key.slice(2, -4))
+}
+
 export const getProjects = () => {
-  const vueFileNames = require.context('@/projects', false, /.vue$/).keys().map(key => key.slice(2, -4))
+  const vueFileNames = getAllProjectFileNames()
   const projects = vueFileNames.map(vueFileName => {
     return {
       header: {
@@ -11,7 +15,7 @@ export const getProjects = () => {
 }
 
 export const getProjectComponents = () => {
-  const vueFileNames = require.context('@/projects', false, /.vue$/).keys().map(key => key.slice(2, -4))
+  const vueFileNames = getAllProjectFileNames()
   const projectComponents = vueFileNames.reduce((acc, curr) => {
     return {
       ...acc,
@@ -20,3 +24,4 @@ export const getProjectComponents = () => {
   }, {})
   return projectComponents
 }
+
