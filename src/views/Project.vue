@@ -10,7 +10,7 @@
   </template>
   
   <script>
-  const { getProjectComponents } = require('../projects/projectsHelper.js')
+  const { getProjectComponents } = require('../projects/projects-gatherer.js')
   const projectComponents = getProjectComponents()
     
   export default {
@@ -34,4 +34,4 @@
     }
   }
   </script>
-  
+  ../projects/projects-compiler.js../projects/projects-gatherer.js

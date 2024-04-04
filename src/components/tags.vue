@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import { getProjects } from '../projects/projectsHelper.js'
+import { getProjects } from '../projects/projects-gatherer.js'
 import SearchResult from './SearchResult.vue';
 
 export default {
@@ -120,4 +120,4 @@ h4 {
     transition: color 0.3s;
     color: rgb(28 29 33);
 }
-</style>
+</style>../projects/projects-compiler.js../projects/projects-gatherer.js

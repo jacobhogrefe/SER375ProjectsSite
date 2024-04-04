@@ -16,7 +16,7 @@
   
 <script>
 import SearchResult from "@/components/SearchResult.vue";
-import { getProjects } from '../projects/projectsHelper.js'
+import { getProjects } from '../projects/projects-gatherer.js'
 
 export default {
     name: 'SearchBar',
@@ -122,4 +122,4 @@ h1 {
     font-size: x-large;
 }
 </style>
-  
+  ../projects/projects-compiler.js../projects/projects-gatherer.js
