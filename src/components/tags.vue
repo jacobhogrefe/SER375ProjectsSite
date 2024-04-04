@@ -120,4 +120,4 @@ h4 {
     transition: color 0.3s;
     color: rgb(28 29 33);
 }
-</style>../projects/projects-compiler.js../projects/projects-gatherer.js
+</style>
