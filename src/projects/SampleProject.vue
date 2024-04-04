@@ -28,7 +28,12 @@ export default {
       pictures: [sampleImage],
       video: "sampleVideo" //get rid of the quotes when putting in your video variable
     }
-  }
+  },
+  info: {
+    title: 'Sample Project',
+    author: 'Ellie Delea',
+    tags: ["Coding", "Hello", "Open Source", "Modding"]
+  } 
 }
 </script>
   

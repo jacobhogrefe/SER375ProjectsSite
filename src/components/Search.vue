@@ -16,7 +16,7 @@
   
 <script>
 import SearchResult from "@/components/SearchResult.vue";
-import projectData from "../projects/projects.json"
+import { getProjects } from '../projects/projectsHelper.js'
 
 export default {
     name: 'SearchBar',
@@ -24,10 +24,12 @@ export default {
         return {
             searchTerm: '',
             searchField: 'project',
-            searchResults: null
+            searchResults: null,
+            projectData: []
         };
     },
     created() {
+        this.projectData = getProjects()
         if (this.$route.query.query) {
             this.searchTerm = this.$route.query.query
             this.search()
@@ -44,7 +46,7 @@ export default {
                     const query = this.searchTerm.toLowerCase()
                     const matches = []
                     const cache = new Set()
-                    projectData.projects.forEach(project => {
+                    this.projectData.projects.forEach(project => {
                         const heading = project.header;
                         if (heading.title.toLowerCase().includes(query) || heading.author.toLowerCase().includes(query)) {
                             const display = `${heading.title}-${heading.author}`;
