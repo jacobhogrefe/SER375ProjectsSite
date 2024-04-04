@@ -25,7 +25,6 @@ export default {
             searchTerm: '',
             searchField: 'project',
             searchResults: null,
-            projectData: []
         };
     },
     created() {

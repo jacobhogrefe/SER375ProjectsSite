@@ -31,7 +31,7 @@ export default {
   },
   info: {
     title: 'Sample Project',
-    author: 'Ellie Delea',
+    author: 'John Smith',
     tags: ["Coding", "Hello", "Open Source", "Modding"]
   } 
 }

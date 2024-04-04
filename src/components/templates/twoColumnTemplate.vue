@@ -23,8 +23,8 @@
 </template>
 
 <script>
-// import projectData from '../../projects/projects.json'
 import tags from '../tags.vue'
+
 export default {
     name: 'twoColumnTemplate',
     props: [

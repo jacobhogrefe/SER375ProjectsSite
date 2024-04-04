@@ -12,14 +12,14 @@ import sampleImage from '../projects/project_images/ProjectSampleImage.jpeg';
 // import sampleVideo from '../projects/project_videos/<VIDEO TITLE>'
 
 export default {
-  name: 'SampleProject',
+  name: 'StardewValleyHoliday',
   components: {
     twoColumnTemplate
   },
   data() {
     return {
-      backgroundColor: "green",
-      projectTitle: "Sample Project 2",
+      backgroundColor: "blue",
+      projectTitle: "Stardew Valley Holiday",
       author: "Smellie Smelea",
       description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque adipisci nesciunt distinctio consectetur quisquam consequatur, corrupti reiciendis ex aut quibusdam minima quidem earum quod architecto deserunt a, commodi debitis! Ducimus.",
       story: "Write your project's story here. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque adipisci nesciunt distinctio consectetur quisquam consequatur, corrupti reiciendis ex aut quibusdam minima quidem earum quod architecto deserunt a, commodi debitis! Ducimus.",
@@ -30,9 +30,9 @@ export default {
     }
   },
   info: {
-    title: 'Sample Project 2',
+    title: 'Stardew Valley Holiday',
     author: 'Smellie Smelea',
-    tags: ["JavaScript"]
+    tags: ["Stardew", "SMAPI", "Modding"]
   } 
 }
 </script>
