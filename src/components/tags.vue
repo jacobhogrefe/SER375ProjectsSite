@@ -12,8 +12,9 @@
 </template>
 
 <script>
-import projectData from '../projects/projects.json'
+import { getProjects } from '../projects/projects-gatherer.js'
 import SearchResult from './SearchResult.vue';
+
 export default {
     components: {
         SearchResult
@@ -25,7 +26,11 @@ export default {
             colors: ["#7473BF", "#6767A3", "#5A5A87", "#4D4E6B", "#46485D", "#434556", "#3F414E"],
             searchResults: null,
             searchTerm: '',
+            projectData: []
         }
+    },
+    created() {
+        this.projectData = getProjects()
     },
     mounted() {
         this.getAllTags();
@@ -37,7 +42,7 @@ export default {
         getAllTags() {
             try {
                 const tags = new Set();
-                projectData.projects.forEach(project => {
+                this.projectData.projects.forEach(project => {
                     project.header.tags.forEach(tag => {
                         this.tags.push(tag);
                     })
@@ -62,7 +67,7 @@ export default {
             const query = this.searchTerm.toLowerCase();
             const matches = [];
             const cache = new Set();
-            projectData.projects.forEach(project => {
+            this.projectData.projects.forEach(project => {
                 const tags = project.header.tags.map(tag => tag.toLowerCase());
                 if (tags.includes(query)) {
                     const display = `${project.header.title}-${project.header.author}`;
