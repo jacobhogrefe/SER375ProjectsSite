@@ -29,6 +29,8 @@ export const getProjectComponent = (projectName) => {
   if (!selectedFileName) {
     return null
   }
-  return markRaw(require(`${selectedFileName}`).default)
+  const component = require(`${selectedFileName}`).default
+  return component ? markRaw(component) : null
 }
+
 
