@@ -28,11 +28,14 @@ This process is a little complicated, so read these instructions carefully.
 9. Run this command in the terminal ```npm run serve```
 
 ## How to add your project page
-1. Choose between the 3 different templates.
+Choose between the 3 different templates.
    
 |One Column Template|Two Column Template|Slideshow Template|
 | --- | --- | --- |
-| | |
+|![](https://github.com/ellidelli/SER375ProjectsSite/blob/master/ReadMeImages/OneColumn.png?raw=true) | ![](https://github.com/ellidelli/SER375ProjectsSite/blob/master/ReadMeImages/TwoColumn.png?raw=true) | ![](https://github.com/ellidelli/SER375ProjectsSite/blob/master/ReadMeImages/Slideshow.png?raw=true)
+
+1. Navigate to ```/src/projects/``` and create a new file. Name it your project name, no spaces, followed by .vue
+2. Inside this same folder, you will find the templates for the pages. Navigate to the one you want, copy and paste its code into your newly made file
 
 
 ### Optional steps if you want one of your images to appear on the homepage background
