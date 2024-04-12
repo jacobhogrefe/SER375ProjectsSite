@@ -33,7 +33,7 @@ export default {
     title: 'Stardew Valley Holiday',
     author: 'Smellie Smelea',
     tags: ["Stardew", "SMAPI", "Modding"]
-  } 
+  }
 }
 </script>
   
