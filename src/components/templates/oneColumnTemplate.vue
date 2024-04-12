@@ -52,6 +52,10 @@ export default {
     padding: 5vh 10vw 10vh 10vw;
 }
 
+.container h1 {
+    font-size: x-large;
+}
+
 video {
     width: 100%;
 
