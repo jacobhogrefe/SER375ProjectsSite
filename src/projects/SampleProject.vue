@@ -8,13 +8,15 @@
   
 <script>
 import twoColumnTemplate from '../components/templates/twoColumnTemplate.vue'
+import oneColumnTemplate from '@/components/templates/oneColumnTemplate.vue';
 import sampleImage from '../projects/project_images/ProjectSampleImage.jpeg';
 // import sampleVideo from '../projects/project_videos/<VIDEO TITLE>'
 
 export default {
   name: 'SampleProject',
   components: {
-    twoColumnTemplate
+    twoColumnTemplate,
+    oneColumnTemplate
   },
   data() {
     return {
@@ -33,7 +35,7 @@ export default {
     title: 'Sample Project',
     author: 'John Smith',
     tags: ["Coding", "Hello", "Open Source", "Modding"]
-  } 
+  }
 }
 </script>
   

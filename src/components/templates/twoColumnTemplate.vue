@@ -11,12 +11,17 @@
                 <h1>Struggles and Triumphs</h1>
                 <p>{{ struggles }}</p>
                 <p>{{ triumphs }}</p>
+                <div v-if="pictures.length > 1" class="videoSide">
+                    <video :src="video" controls></video>
+                </div>
             </div>
             <div class="right">
                 <div v-for="(picture, index) in pictures" :key="index">
                     <img :src="picture" alt="Project Image">
                 </div>
-                <video :src="video" controls></video>
+                <div v-if="pictures.length <= 1" class="videoSide">
+                    <video :src="video" controls></video>
+                </div>
             </div>
         </div>
     </div>
@@ -76,8 +81,23 @@ export default {
     max-width: 90%;
 }
 
-.right video {
+.right>.videoSide {
+    width: 100%;
+}
+
+.right>.videoSide>video {
     width: 90%;
+    padding-bottom: 10vh;
+}
+
+.left>.videoSide {
+    width: 100%;
+}
+
+.left>.videoSide>video {
+    width: 90%;
+    padding-bottom: 10vh;
+    align-items: center;
 }
 
 .left p {
@@ -90,7 +110,7 @@ h3 {
     color: white;
 }
 
-h3{
+h3 {
     padding-bottom: 5vh;
 }
 
@@ -105,6 +125,5 @@ h1 {
 img {
     padding-bottom: 5vh;
 }
-
 </style>
 
