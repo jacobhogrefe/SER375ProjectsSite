@@ -2,11 +2,7 @@
     <div class="data">
         <h1>{{ projectTitle }}</h1>
         <h3>{{ author }}</h3>
-        <div class="slideshow">
-            <vueper-slides fade :touchable="false">
-                <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide.image" />
-            </vueper-slides>
-        </div>
+        <slot name="slideshow"></slot>
         <div class="container">
             <div class="left">
                 <h1>What is this project?</h1>
@@ -25,25 +21,11 @@
 </template>
 
 <script>
-import { VueperSlides, VueperSlide } from 'vueperslides'
 import 'vueperslides/dist/vueperslides.css'
-import sampleImage from '../../projects/project_images/ProjectSampleImage.jpeg'
 import tags from '../tags.vue'
 
 export default {
-    components: { VueperSlides, VueperSlide, tags },
-    data() {
-        return {
-            slides: [
-                {
-                    image: sampleImage
-                },
-                {
-                    image: sampleImage
-                }
-            ]
-        }
-    },
+    components: { tags },
     props: [
         'backgroundColor',
         'projectTitle',
@@ -62,10 +44,6 @@ export default {
 <style scoped>
 .data {
     margin-top: 10vh;
-}
-
-.slideshow {
-    padding-bottom: 10vh;
 }
 
 .container {

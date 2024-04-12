@@ -2,19 +2,34 @@
     <div>
         <slideshowTemplate :backgroundColor="backgroundColor" :projectTitle="projectTitle" :author="author"
             :description="description" :story="story" :struggles="struggles" :triumphs="triumphs" :pictures="pictures"
-            :video="video"></slideshowTemplate>
+            :video="video">
+            <template v-slot:slideshow>
+                <vueper-slides fade :touchable="false" class="slideshow">
+                    <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide.image" />
+                </vueper-slides>
+            </template>
+        </slideshowTemplate>
     </div>
 </template>
     
 <script>
-import slideshowTemplate from '../components/templates/SlideshowTemplate.vue'
-import sampleImage from '../projects/project_images/ProjectSampleImage.jpeg';
-// import sampleVideo from '../projects/project_videos/<VIDEO TITLE>'
+import slideshowTemplate from '../components/templates/SlideshowTemplate.vue';
+
+//import images
+import one from '../projects/project_images/1.png';
+import two from '../projects/project_images/2.png';
+import three from '../projects/project_images/3.png';
+
+// Import VueperSlides and VueperSlide from vueperslides
+import { VueperSlides, VueperSlide } from 'vueperslides';
+import 'vueperslides/dist/vueperslides.css';
 
 export default {
     name: 'SlideshowSampleProject',
     components: {
-        slideshowTemplate
+        slideshowTemplate,
+        VueperSlides,
+        VueperSlide
     },
     data() {
         return {
@@ -25,8 +40,19 @@ export default {
             story: "Write your project's story here. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque adipisci nesciunt distinctio consectetur quisquam consequatur, corrupti reiciendis ex aut quibusdam minima quidem earum quod architecto deserunt a, commodi debitis! Ducimus.",
             struggles: "Write your project's struggles here. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque adipisci nesciunt distinctio consectetur quisquam consequatur, corrupti reiciendis ex aut quibusdam minima quidem earum quod architecto deserunt a, commodi debitis! Ducimus.",
             triumphs: "Write your project's triumphs here. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque adipisci nesciunt distinctio consectetur quisquam consequatur, corrupti reiciendis ex aut quibusdam minima quidem earum quod architecto deserunt a, commodi debitis! Ducimus.",
-            pictures: [sampleImage],
-            video: "sampleVideo" //get rid of the quotes when putting in your video variable
+            video: "sampleVideo", //get rid of the quotes when putting in your video variable
+            slides: [
+                {
+                    image: one
+                },
+                {
+                    image: two
+                },
+                {
+                    image: three
+                }
+            ]
+
         }
     },
     info: {
@@ -36,4 +62,9 @@ export default {
     }
 }
 </script>
-    
+
+<style scoped>
+.slideshow {
+    padding-bottom: 10vh;
+}
+</style>
