@@ -20,6 +20,9 @@ import one from '../projects/project_images/1.png';
 import two from '../projects/project_images/2.png';
 import three from '../projects/project_images/3.png';
 
+//import video
+// import video from '../projects/project_videos/<YOUR VIDEO>'
+
 // Import VueperSlides and VueperSlide from vueperslides
 import { VueperSlides, VueperSlide } from 'vueperslides';
 import 'vueperslides/dist/vueperslides.css';
