@@ -3,6 +3,8 @@
     <img src="/ReadMeImages/Banner.png" alt="banner"/>
 </div>
 
+### [Website Homepage](https://ellidelli.github.io/SER375ProjectsSite/)
+
 ## Table of Contents
 * [Setting up for development](#setting-up-for-development)
     * [Forking the repo](#fork-the-repo)
