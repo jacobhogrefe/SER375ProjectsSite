@@ -38,10 +38,10 @@
 </template>
   
 <script>
-import twoColumnTemplate from '../components/templates/twoColumnTemplate.vue'
-import foglands_image from '../projects/project_images/misty_foglands_world.jpg'
-import foglands_items from '../projects/project_images/misty_foglands_items.jpg'
-import foglands_video from '../projects/project_videos/misty_foglands.mp4'
+import twoColumnTemplate from '../components/templates/twoColumnTemplate.vue';
+import foglands_image from '../projects/project_images/misty_foglands_world.jpg';
+import foglands_items from '../projects/project_images/misty_foglands_items.jpg';
+import foglands_video from '../projects/project_videos/misty_foglands.mp4';
 
 export default {
   name: 'MistyFoglands',
