@@ -1,6 +1,6 @@
 <template>
     <div class="tag-container">
-        <h4 v-for="(count, tag) in tagCounts" :key="tag" :style="{ backgroundColor: getRandomColor() }"
+        <h4 v-for="(count, tag) in tagCounts" :key="tag" :style="{ backgroundColor: getTagColor(tag) }"
             @click="openResults(tag)" class="tagButton">
             {{ tag }} ({{ count }}) </h4>
     </div>
@@ -10,7 +10,7 @@
             :author="searchResult.Author" :display="searchResult.display" />
     </div>
 </template>
-
+  
 <script>
 import { getProjects } from '../projects/projects-gatherer.js'
 import SearchResult from './SearchResult.vue';
@@ -23,10 +23,37 @@ export default {
         return {
             tags: [],
             tagCounts: {},
-            colors: ["#7473BF", "#6767A3", "#5A5A87", "#4D4E6B", "#46485D", "#434556", "#3F414E"],
+            // colors: ["#7473BF", "#6767A3", "#5A5A87", "#4D4E6B", "#46485D", "#434556", "#3F414E"],
+            colors: [
+                "#FFC0CB", // Pink
+                "#FF69B4", // Hot Pink
+                "#FFB6C1", // Light Pink
+                "#FF1493", // Deep Pink
+                "#FF7F50", // Coral
+                "#FFA07A", // Light Salmon
+                "#FF6347", // Tomato
+                "#FF4500", // Orange Red
+                "#FFD700", // Gold
+                "#FFA500", // Orange
+                "#FF8C00", // Dark Orange
+                "#FFDAB9", // Peachpuff
+                "#FFA07A", // Light Salmon
+                "#FA8072", // Salmon
+                "#FFB6C1", // Light Pink
+                "#FFAEB9", // Blush
+                "#FFE4E1", // Misty Rose
+                "#FFDAB9", // Peachpuff
+                "#FFA07A", // Light Salmon
+                "#FFB6C1", // Light Pink
+                "#F08080", // Light Coral
+                "#FF4500", // Orange Red
+                "#FF6347", // Tomato
+                "#FF0000"  // Red
+            ],
             searchResults: null,
             searchTerm: '',
-            projectData: []
+            projectData: [],
+            tagColors: {}
         }
     },
     created() {
@@ -34,6 +61,7 @@ export default {
     },
     mounted() {
         this.getAllTags();
+        this.loadTagColors();
     },
     methods: {
         getRandomColor() {
@@ -84,6 +112,25 @@ export default {
             matches.sort((a, b) => (a.display > b.display) ? 1 : -1);
             this.searchResults = matches;
         },
+        getTagColor(tag) {
+            const storedColor = localStorage.getItem(`tagColor_${tag}`);
+            if (storedColor) {
+                return storedColor;
+            } else {
+                const randomColor = this.getRandomColor();
+                localStorage.setItem(`tagColor_${tag}`, randomColor);
+                return randomColor;
+            }
+        },
+        loadTagColors() {
+            this.tags.forEach(tag => {
+                const storedColor = localStorage.getItem(`tagColor_${tag}`);
+                if (storedColor) {
+                    this.tagColors[tag] = storedColor;
+                }
+            });
+        }
+
     }
 }
 </script>
