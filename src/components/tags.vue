@@ -69,13 +69,14 @@ export default {
         },
         getAllTags() {
             try {
-                const tags = new Set();
                 this.projectData.projects.forEach(project => {
                     project.header.tags.forEach(tag => {
                         this.tags.push(tag);
-                    })
-                    this.countTagOccurrences();
+                    });
                 });
+                //sort the tags alphabetically
+                this.tags.sort((a, b) => a.localeCompare(b));
+                this.countTagOccurrences();
             } catch (error) {
                 console.error('Error loading projects:', error);
             }
