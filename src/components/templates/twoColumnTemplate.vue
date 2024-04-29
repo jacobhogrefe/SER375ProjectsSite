@@ -126,5 +126,25 @@ h1 {
 img {
     padding-bottom: 5vh;
 }
+
+@media screen and (max-width: 600px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .data {
+        padding: 2rem;
+    }
+
+    .left {
+        width: 100%;
+        float: center;
+    }
+
+    .right {
+        width: 100%;
+        float: center;
+    }
+}
 </style>
 
