@@ -12,7 +12,6 @@
 * [How to add your project page](#adding-your-own-project-page)
     * [Column instructions](#column-instructions)
     * [Slideshow instructions](#slideshow-instructions)
-    * [Homepage background instructions](#steps-if-you-want-one-of-your-images-to-appear-on-the-homepage-background)
 * [How to push your changes to the site](#adding-your-project-to-the-official-repo)
 * [Setting up the site locally for further development](#setting-up-the-site-locally-for-further-development)
 
@@ -45,19 +44,45 @@ Choose between the 3 different templates.
 2. Navigate to ```/src/projects/```. Put your project demo video in the ```/project_videos``` folder and your image(s) in the ```/project_images``` folder
 3. In the ```/projects``` folder, create a new file. Name it your project name, no spaces, followed by .vue ```<YourProjectName>.vue```
 4. Inside this same folder, you will find the sample project templates for each layout. Navigate to the one you want, copy and paste its code into your newly made file
-5. In this section of the code, change the import paths to your image(s) and your video. (uncomment the video import and add more imports if you have more than one photo)
+5. In this section of code:
+   * Enter your description
+   * Enter your story
+   * Enter your struggles and triumphs
+   * Add any helpful links
+   * You are able to add any html tags in each section. p for normal text. a for a link. h2 for headers. Whatever you want.
+   ```Javascript
+   <template v-slot:description>
+       <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque adipisci nesciunt distinctio consectetur
+          quisquam consequatur, corrupti reiciendis ex aut quibusdam minima quidem earum quod architecto deserunt
+          a, commodi debitis! Ducimus.</p>
+   </template>
+   <template v-slot:story>
+       <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque adipisci nesciunt distinctio consectetur
+          quisquam consequatur, corrupti reiciendis ex aut quibusdam minima quidem earum quod architecto deserunt
+          a, commodi debitis! Ducimus.</p>
+   </template>
+   <template v-slot:strugglesAndTriumphs>
+       <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque adipisci nesciunt distinctio consectetur
+          quisquam consequatur, corrupti reiciendis ex aut quibusdam minima quidem earum quod architecto deserunt
+          a, commodi debitis! Ducimus.</p>
+   </template>
+   <template v-slot:links>
+       <a href="https://www.google.com">google</a>
+   </template>
+   ```
+7. In this section of the code, change the import paths to your image(s) and your video. (uncomment the video import and add more imports if you have more than one photo)
     ```Javascript
    import twoColumnTemplate from '../components/templates/twoColumnTemplate.vue'
    import sampleImage from '../projects/project_images/ProjectSampleImage.jpeg';
    //import sampleVideo from '../projects/project_videos/<VIDEO TITLE>'
    ```
-6. In this section of code:
+8. In this section of code:
    * Replace the name: with your project name (the same as your vue file)
    * Replace all information under data() to match your project
    * When it comes to multiple pictures, just add them to the array [just, like, this]
-   * Under the info: section, replace the title with your project name, with spaces
-   * Add your name to author
-   * Change the tags to have as little or as many you need. Write down languages you've used, software, games, etc. This is to make it easier to find similar projects. 
+   * Under the info: section, replace the title with your project name with spaces
+   * Add your name to the author
+   * Change the tags to have as little or as many as you need. Write down languages you've used, such as software, games, etc. This is to make it easier to find similar projects. 
    ```Javascript
    export default {
       name: 'TwoColumnSampleProject',
@@ -66,13 +91,8 @@ Choose between the 3 different templates.
       },
       data() {
         return {
-          backgroundColor: "black",
           projectTitle: "Two Column Sample Project",
           author: "John Smith",
-          description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque adipisci nesciunt distinctio consectetur quisquam consequatur, corrupti reiciendis ex aut quibusdam minima quidem earum quod architecto deserunt a, commodi debitis! Ducimus.",
-          story: "Write your project's story here. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque adipisci nesciunt distinctio consectetur quisquam consequatur, corrupti reiciendis ex aut quibusdam minima quidem earum quod architecto deserunt a, commodi debitis! Ducimus.",
-          struggles: "Write your project's struggles here. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque adipisci nesciunt distinctio consectetur quisquam consequatur, corrupti reiciendis ex aut quibusdam minima quidem earum quod architecto deserunt a, commodi debitis! Ducimus.",
-          triumphs: "Write your project's triumphs here. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque adipisci nesciunt distinctio consectetur quisquam consequatur, corrupti reiciendis ex aut quibusdam minima quidem earum quod architecto deserunt a, commodi debitis! Ducimus.",
           pictures: [sampleImage],
           video: "sampleVideo" //get rid of the quotes when putting in your video variable
         }
@@ -84,7 +104,7 @@ Choose between the 3 different templates.
       }
     }                                        
     ```
-7. Check and make sure your project page loads on the site. Check it through the search, and through the tags. If you want to add one of your screenshots into the homescreen background, [click here](#steps-if-you-want-one-of-your-images-to-appear-on-the-homepage-background).
+9. Check and make sure your project page loads on the site. Check it through the search, and through the tags. If you want to add one of your screenshots into the homescreen background, [click here](#steps-if-you-want-one-of-your-images-to-appear-on-the-homepage-background).
 
 ## Slideshow instructions
 _Note: The slideshow height cannot be adjusted so take that into consideration when cropping your photos._
@@ -92,6 +112,32 @@ _Note: The slideshow height cannot be adjusted so take that into consideration w
 1. Create a new file in the ```/projects``` folder. Name it your project name, no spaces, followed by .vue ```<YourProjectName>.vue```
 2. Inside this same folder, you will find ```SlideshowSampleProject.vue```. Copy and paste its code into your newly made file.
 3. In this section of code:
+   * Enter your description
+   * Enter your story
+   * Enter your struggles and triumphs
+   * Add any helpful links
+   * You are able to add any html tags in each section. p for normal text. a for a link. h2 for headers. Whatever you want.
+   ```Javascript
+   <template v-slot:description>
+       <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque adipisci nesciunt distinctio consectetur
+          quisquam consequatur, corrupti reiciendis ex aut quibusdam minima quidem earum quod architecto deserunt
+          a, commodi debitis! Ducimus.</p>
+   </template>
+   <template v-slot:story>
+       <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque adipisci nesciunt distinctio consectetur
+          quisquam consequatur, corrupti reiciendis ex aut quibusdam minima quidem earum quod architecto deserunt
+          a, commodi debitis! Ducimus.</p>
+   </template>
+   <template v-slot:strugglesAndTriumphs>
+       <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque adipisci nesciunt distinctio consectetur
+          quisquam consequatur, corrupti reiciendis ex aut quibusdam minima quidem earum quod architecto deserunt
+          a, commodi debitis! Ducimus.</p>
+   </template>
+   <template v-slot:links>
+       <a href="https://www.google.com">google</a>
+   </template>
+   ```
+4. In this section of code:
    * Update the image imports to your images
    * Update the video import to your video
 ```Javascript
@@ -119,13 +165,8 @@ import video from '../projects/project_videos/<YOUR VIDEO>'
 ```Javascript
  data() {
         return {
-            backgroundColor: "black",
             projectTitle: "Slideshow Sample Project",
             author: "John Smith",
-            description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque adipisci nesciunt distinctio consectetur quisquam consequatur, corrupti reiciendis ex aut quibusdam minima quidem earum quod architecto deserunt a, commodi debitis! Ducimus.",
-            story: "Write your project's story here. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque adipisci nesciunt distinctio consectetur quisquam consequatur, corrupti reiciendis ex aut quibusdam minima quidem earum quod architecto deserunt a, commodi debitis! Ducimus.",
-            struggles: "Write your project's struggles here. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque adipisci nesciunt distinctio consectetur quisquam consequatur, corrupti reiciendis ex aut quibusdam minima quidem earum quod architecto deserunt a, commodi debitis! Ducimus.",
-            triumphs: "Write your project's triumphs here. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque adipisci nesciunt distinctio consectetur quisquam consequatur, corrupti reiciendis ex aut quibusdam minima quidem earum quod architecto deserunt a, commodi debitis! Ducimus.",
             video: "sampleVideo", //get rid of the quotes when putting in your video variable
             slides: [
                 {
@@ -153,14 +194,8 @@ import video from '../projects/project_videos/<YOUR VIDEO>'
         tags: ["Sample", "Templates", "Open Source", "Help"]
     }
 ```
-7. Check and make sure your project page loads on the site. Check it through the search, and through the tags. If you want to add one of your screenshots into the homescreen background, [click here](#steps-if-you-want-one-of-your-images-to-appear-on-the-homepage-background).
+7. Check and make sure your project page loads on the site. Check it through the search, and through the tags.
 
-## Steps if you want one of your images to appear on the homepage background
-1. Navigate to the folder ```/src/assets/backgrounds``` folder
-2. Drop your image (renamed, please) into the folder
-3. Navigate to the file ```src/views/HomeView.vue``` and add your image name to the line 24 array
-4. Now your image can randomly pop up as the home screen background
-5. If everything works, skip to the [next git instructions](#adding-your-project-to-the-official-repo)
 
 ***Please, before continuing, make sure the website still works, and your project page looks the way you want***
 
