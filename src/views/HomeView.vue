@@ -20,10 +20,20 @@
 export default {
   methods: {
     randomBackground() {
-      //TO DO: change out these images with completed student images
-      const backgrounds = ['stardew.png', 'codetemplate.png']; // add more image filenames as more are added
-      const randomIndex = Math.floor(Math.random() * backgrounds.length);
-      return require(`../assets/backgrounds/${backgrounds[randomIndex]}`);
+      // Load background images dynamically
+      const backgrounds = require.context(
+        '../projects/project_images',
+        true, // Include subdirectories
+        /\.(png|jpe?g)$/ // File extension pattern
+      );
+
+      const backgroundFiles = backgrounds.keys().map(key => key.slice(2));
+
+      // Get a random index to select a random background image
+      const randomIndex = Math.floor(Math.random() * backgroundFiles.length);
+
+      // Use require to load the random background image dynamically
+      return require(`../projects/project_images/${backgroundFiles[randomIndex]}`);
     }
   }
 }
