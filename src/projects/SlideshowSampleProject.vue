@@ -1,12 +1,25 @@
 <template>
     <div>
-        <slideshowTemplate :backgroundColor="backgroundColor" :projectTitle="projectTitle" :author="author"
-            :description="description" :story="story" :struggles="struggles" :triumphs="triumphs" :pictures="pictures"
-            :video="video">
+        <slideshowTemplate :projectTitle="projectTitle" :author="author" :pictures="pictures" :video="video">
             <template v-slot:slideshow>
                 <vueper-slides fade :touchable="false" class="slideshow">
                     <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide.image" />
                 </vueper-slides>
+            </template>
+            <template v-slot:description>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque adipisci nesciunt distinctio consectetur
+                    quisquam consequatur, corrupti reiciendis ex aut quibusdam minima quidem earum quod architecto deserunt
+                    a, commodi debitis! Ducimus.</p>
+            </template>
+            <template v-slot:story>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque adipisci nesciunt distinctio consectetur
+                    quisquam consequatur, corrupti reiciendis ex aut quibusdam minima quidem earum quod architecto deserunt
+                    a, commodi debitis! Ducimus.</p>
+            </template>
+            <template v-slot:strugglesAndTriumphs>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque adipisci nesciunt distinctio consectetur
+                    quisquam consequatur, corrupti reiciendis ex aut quibusdam minima quidem earum quod architecto deserunt
+                    a, commodi debitis! Ducimus.</p>
             </template>
             <template v-slot:links>
                 <div style="padding-bottom: 10vh;">
@@ -41,13 +54,8 @@ export default {
     },
     data() {
         return {
-            backgroundColor: "black",
             projectTitle: "Slideshow Sample Project",
             author: "John Smith",
-            description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque adipisci nesciunt distinctio consectetur quisquam consequatur, corrupti reiciendis ex aut quibusdam minima quidem earum quod architecto deserunt a, commodi debitis! Ducimus.",
-            story: "Write your project's story here. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque adipisci nesciunt distinctio consectetur quisquam consequatur, corrupti reiciendis ex aut quibusdam minima quidem earum quod architecto deserunt a, commodi debitis! Ducimus.",
-            struggles: "Write your project's struggles here. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque adipisci nesciunt distinctio consectetur quisquam consequatur, corrupti reiciendis ex aut quibusdam minima quidem earum quod architecto deserunt a, commodi debitis! Ducimus.",
-            triumphs: "Write your project's triumphs here. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque adipisci nesciunt distinctio consectetur quisquam consequatur, corrupti reiciendis ex aut quibusdam minima quidem earum quod architecto deserunt a, commodi debitis! Ducimus.",
             video: "sampleVideo", //get rid of the quotes when putting in your video variable
             slides: [
                 {
@@ -78,5 +86,26 @@ export default {
 
 a {
     color: white;
+}
+
+h1,
+h2,
+h3 {
+    color: white;
+    max-width: 90%;
+}
+
+h3 {
+    padding-bottom: 5vh;
+}
+
+p {
+    padding-bottom: 10vh;
+    text-align: left;
+    max-width: 90%;
+}
+
+h1 {
+    padding-bottom: 2vh;
 }
 </style>

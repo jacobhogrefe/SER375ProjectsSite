@@ -6,14 +6,13 @@
         <div class="container">
             <div class="left">
                 <h1>What is this project?</h1>
-                <p>{{ description }}</p>
+                <slot name="description"> </slot>
                 <h1>Story</h1>
-                <p>{{ story }}</p>
+                <slot name="story"> </slot>
             </div>
             <div class="right">
                 <h1>Struggles and Triumphs</h1>
-                <p>{{ struggles }}</p>
-                <p>{{ triumphs }}</p>
+                <slot name="strugglesAndTriumphs"> </slot>
             </div>
         </div>
         <video :src="video" controls></video>
