@@ -23,5 +23,5 @@ jobs:
           git init
           git add -A
           git commit -m 'deploy'
-          git push -f https://ellidelli:${{ secrets.GITHUB_TOKEN }}@https://github.com/ellidelli/SER375ProjectsSite.git master:gh-pages
+          git push -f https://ellidelli:${{ secrets.GITHUB_TOKEN }}@github.com/ellidelli/SER375ProjectsSite.git master:gh-pages
         shell: bash
