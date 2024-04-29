@@ -8,6 +8,11 @@
                     <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide.image" />
                 </vueper-slides>
             </template>
+            <template v-slot:links>
+                <div style="padding-bottom: 10vh;">
+                    <a href="https://www.google.com">google</a>
+                </div>
+            </template>
         </slideshowTemplate>
     </div>
 </template>
@@ -69,5 +74,9 @@ export default {
 <style scoped>
 .slideshow {
     padding-bottom: 10vh;
+}
+
+a {
+    color: white;
 }
 </style>

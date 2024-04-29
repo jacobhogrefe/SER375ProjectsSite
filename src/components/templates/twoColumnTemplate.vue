@@ -23,7 +23,10 @@
                     <video :src="video" controls></video>
                 </div>
             </div>
+
         </div>
+        <h1>Helpful Links</h1>
+        <slot name="links"></slot>
     </div>
 </template>
 

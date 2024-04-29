@@ -14,6 +14,8 @@
                 <img :src="picture" alt="Project Image">
             </div>
             <video :src="video" controls></video>
+            <h1>Helpful Links</h1>
+            <slot name="links"></slot>
         </div>
     </div>
 </template>
@@ -58,7 +60,7 @@ export default {
 
 video {
     width: 100%;
-
+    padding-bottom: 10vh;
 }
 
 .left p {

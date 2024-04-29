@@ -2,7 +2,11 @@
     <div>
         <oneColumnTemplate :backgroundColor="backgroundColor" :projectTitle="projectTitle" :author="author"
             :description="description" :story="story" :struggles="struggles" :triumphs="triumphs" :pictures="pictures"
-            :video="video" />
+            :video="video">
+            <template v-slot:links>
+                <a href="https://www.google.com">google</a>
+            </template>
+        </oneColumnTemplate>
     </div>
 </template>
     
@@ -36,4 +40,10 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+a {
+    color: white;
+}
+</style>
     
