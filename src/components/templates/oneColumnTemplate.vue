@@ -4,16 +4,11 @@
         <h3>{{ author }}</h3>
         <div class="container">
             <h1>What is this project?</h1>
-            <!-- <p>{{ description }}</p> -->
             <slot name="description"> </slot>
-
             <h1>Story</h1>
-            <!-- <p>{{ story }}</p> -->
             <slot name="story"> </slot>
-
             <h1>Struggles and Triumphs</h1>
             <slot name="strugglesAndTriumphs"> </slot>
-
             <div v-for="(picture, index) in pictures" :key="index">
                 <img :src="picture" alt="Project Image">
             </div>

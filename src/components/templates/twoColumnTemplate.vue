@@ -5,12 +5,11 @@
         <div class="container">
             <div class="left">
                 <h1>What is this project?</h1>
-                <p>{{ description }}</p>
+                <slot name="description"> </slot>
                 <h1>Story</h1>
-                <p>{{ story }}</p>
+                <slot name="story"> </slot>
                 <h1>Struggles and Triumphs</h1>
-                <p>{{ struggles }}</p>
-                <p>{{ triumphs }}</p>
+                <slot name="strugglesAndTriumphs"> </slot>
                 <div v-if="pictures.length > 1" class="videoSide">
                     <video :src="video" controls></video>
                 </div>
@@ -36,14 +35,9 @@ import tags from '../tags.vue'
 export default {
     name: 'twoColumnTemplate',
     props: [
-        'backgroundColor',
         'projectTitle',
         'author',
         'tags',
-        'description',
-        'story',
-        'struggles',
-        'triumphs',
         'pictures',
         'video',
     ],
