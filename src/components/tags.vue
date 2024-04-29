@@ -1,8 +1,12 @@
 <template>
+    <h1>Search for a tag.</h1>
+    <div class="search-container">
+        <input type="text" v-model="searchTerm" placeholder="Search tags..." class="searchbar">
+    </div>
     <div class="tag-container">
-        <h4 v-for="(count, tag) in tagCounts" :key="tag" :style="{ backgroundColor: getTagColor(tag) }"
-            @click="openResults(tag)" class="tagButton">
-            {{ tag }} ({{ count }}) </h4>
+        <h4 v-for="tag in filteredTags" :key="tag" :style="{ backgroundColor: getTagColor(tag) }" @click="openResults(tag)"
+            class="tagButton">
+            {{ tag }} ({{ tagCounts[tag] || 0 }}) </h4>
     </div>
     <div class="results-container" v-if="searchResults && searchResults.length > 0">
         <h1>Results</h1>
@@ -131,12 +135,48 @@ export default {
                 }
             });
         }
-
-    }
+    },
+    computed: {
+        filteredTags() {
+            const uniqueTags = [...new Set(this.tags)];
+            return uniqueTags.filter(tag => tag.toLowerCase().includes(this.searchTerm.toLowerCase()));
+        }
+    },
 }
 </script>
 
 <style scoped>
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2vh;
+    padding-bottom: 10vh;
+}
+
+.searchbar {
+    width: 40vw;
+    height: 30px;
+    margin-right: 10px;
+    padding: 20px;
+    font-family: "Poppins";
+    border-radius: 20px;
+    outline: none;
+    border: none;
+}
+
+.search-button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+    width: 3vw;
+    min-width: 30px;
+    height: 0;
+    padding-top: 10%;
+    position: relative;
+}
+
 h4 {
     text-align: center;
     border-radius: 10px;
@@ -167,5 +207,9 @@ h4 {
 .tagButton:hover {
     transition: color 0.3s;
     color: rgb(28 29 33);
+}
+
+h1 {
+    padding-bottom: 5vh;
 }
 </style>
