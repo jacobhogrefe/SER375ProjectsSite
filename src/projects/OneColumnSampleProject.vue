@@ -1,8 +1,21 @@
 <template>
     <div>
-        <oneColumnTemplate :backgroundColor="backgroundColor" :projectTitle="projectTitle" :author="author"
-            :description="description" :story="story" :struggles="struggles" :triumphs="triumphs" :pictures="pictures"
-            :video="video">
+        <oneColumnTemplate :projectTitle="projectTitle" :author="author" :pictures="pictures" :video="video">
+            <template v-slot:description>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque adipisci nesciunt distinctio consectetur
+                    quisquam consequatur, corrupti reiciendis ex aut quibusdam minima quidem earum quod architecto deserunt
+                    a, commodi debitis! Ducimus.</p>
+            </template>
+            <template v-slot:story>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque adipisci nesciunt distinctio consectetur
+                    quisquam consequatur, corrupti reiciendis ex aut quibusdam minima quidem earum quod architecto deserunt
+                    a, commodi debitis! Ducimus.</p>
+            </template>
+            <template v-slot:strugglesAndTriumphs>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque adipisci nesciunt distinctio consectetur
+                    quisquam consequatur, corrupti reiciendis ex aut quibusdam minima quidem earum quod architecto deserunt
+                    a, commodi debitis! Ducimus.</p>
+            </template>
             <template v-slot:links>
                 <a href="https://www.google.com">google</a>
             </template>
@@ -22,13 +35,8 @@ export default {
     },
     data() {
         return {
-            backgroundColor: "black",
             projectTitle: "One Column Sample Project",
             author: "John Smith",
-            description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque adipisci nesciunt distinctio consectetur quisquam consequatur, corrupti reiciendis ex aut quibusdam minima quidem earum quod architecto deserunt a, commodi debitis! Ducimus.",
-            story: "Write your project's story here. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque adipisci nesciunt distinctio consectetur quisquam consequatur, corrupti reiciendis ex aut quibusdam minima quidem earum quod architecto deserunt a, commodi debitis! Ducimus.",
-            struggles: "Write your project's struggles here. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque adipisci nesciunt distinctio consectetur quisquam consequatur, corrupti reiciendis ex aut quibusdam minima quidem earum quod architecto deserunt a, commodi debitis! Ducimus.",
-            triumphs: "Write your project's triumphs here. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque adipisci nesciunt distinctio consectetur quisquam consequatur, corrupti reiciendis ex aut quibusdam minima quidem earum quod architecto deserunt a, commodi debitis! Ducimus.",
             pictures: [sampleImage, sampleImage],
             video: "sampleVideo" //get rid of the quotes when putting in your video variable
         }
@@ -44,6 +52,25 @@ export default {
 <style scoped>
 a {
     color: white;
+}
+
+h1,
+h2,
+h3 {
+    color: white;
+}
+
+h3 {
+    padding-bottom: 5vh;
+}
+
+p {
+    padding-bottom: 10vh;
+    text-align: left;
+}
+
+h1 {
+    padding-bottom: 2vh;
 }
 </style>
     
