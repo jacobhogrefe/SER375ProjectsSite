@@ -77,6 +77,7 @@ h3 {
 
 p {
     padding-bottom: 10vh;
+    text-align: left;
 }
 
 h1 {
