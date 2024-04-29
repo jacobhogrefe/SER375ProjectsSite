@@ -14,6 +14,7 @@
     * [Slideshow instructions](#slideshow-instructions)
     * [Homepage background instructions](#steps-if-you-want-one-of-your-images-to-appear-on-the-homepage-background)
 * [How to push your changes to the site](#adding-your-project-to-the-official-repo)
+* [Setting up the site locally for further development](#setting-up-the-site-locally-for-further-development)
 
 
 ## Setting up for development
@@ -170,3 +171,9 @@ import video from '../projects/project_videos/<YOUR VIDEO>'
 4. When you get to the Compare changes step, you must hit compare across forks and select your forked repo and branch name
 5. Create your pull request
 6. Wait until your project is merged with the site!
+
+# Setting up the site locally for further development
+1. Clone the repo by typing in the terminal: ```git clone https://github.com/ellidelli/SER375ProjectsSite```
+2. Open the folder in your ide, and run these two commands
+   ```npm install```
+   ```npm run serve```
